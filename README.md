@@ -78,3 +78,65 @@ Test method `test_filter_users()`.
 
 ---
 
+
+DB:
+--
+
+Copy the contents of your .env or .env.example file to create a file called .env.testing
+
+Change the value of APP_ENV to 'testing'
+
+remove all of the DB_ entries
+
+Make sure your phpunit.xml has the following lines and uncomment them:
+
+<env name="DB_CONNECTION" value="memory_testing"/>
+<env name="DB_DATABASE" value=":memory:"/>
+
+Add the following array to your connections in database.php:
+
+'connections' => [
+
+   'memory_testing' => [
+     'driver' => 'sqlite',
+     'database' => ':memory:',
+     'prefix' => '',
+   ],
+
+   ...
+Finally, run 
+	php artisan optimize:clear
+ to clear the caches.
+
+Your unit and feature tests should now be using the in-memory SQLite database, 
+while your local should continue using the database configured in .env file.
+
+
+
+APP KEY:
+--------
+
+php artisan key:generate --env=testing
+
+
+
+MySQL error key too long:
+------------------------
+
+Solution 1:
+
+In file appServiceProvider.php in function boot() ->   Schema::defaultStringLength(191);
+
+Solution 2:
+
+Inside config/database.php, replace this line for mysql
+
+'engine' => null',
+
+with
+
+'engine' => 'InnoDB ROW_FORMAT=DYNAMIC',
+
+
+Then retry    php artisan migrate:fresh
+
