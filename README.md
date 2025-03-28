@@ -1,11 +1,6 @@
-## Test Your Laravel Eloquent Relationships Skills
+## Test Laravel Eloquent Relationships
 
-This repository is a test: perform a set of tasks listed below, and fix the PHPUnit tests, which are currently intentionally failing.
-
-To test if all the functions work correctly, there are PHPUnit tests in `tests/Feature/RelationshipsTest.php` file.
-
-In the very beginning, if you run `php artisan test`, or `vendor/bin/phpunit`, all tests fail.
-Your task is to make those tests pass.
+There are PHPUnit tests in `tests/Feature/RelationshipsTest.php` file.
 
 ---
 
