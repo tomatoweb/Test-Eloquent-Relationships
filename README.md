@@ -1,3 +1,5 @@
+## How to use
+
 ## Test Laravel Eloquent Relationships
 
 There are PHPUnit tests in `tests/Feature/RelationshipsTest.php` file.
