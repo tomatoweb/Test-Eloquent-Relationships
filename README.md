@@ -40,7 +40,8 @@ There are PHPUnit tests in `tests/Feature/RelationshipsTest.php` file.
 
 ---
 
-## Task 1. HasMany Defined Incorrectly.  (answer on bottom)
+## Task 1. HasMany Defined Incorrectly.  
+(see solution on bottom of this page)
 
 In `app/Models/User.php` file, the relationship is missing some parameter. Fix this.
 
