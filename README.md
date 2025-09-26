@@ -38,10 +38,11 @@ And connect it in `phpunit.xml`
 
 There are PHPUnit tests in `tests/Feature/RelationshipsTest.php` file.
 
+### Solutions are on bottom of this page
+
 ---
 
 ## Task 1. HasMany Defined Incorrectly.  
-(see solution on bottom of this page)
 
 In `app/Models/User.php` file, the relationship is missing some parameter. Fix this.
 
