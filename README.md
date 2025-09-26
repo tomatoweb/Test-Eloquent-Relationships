@@ -1,12 +1,43 @@
 ## How to use :
 
+Copy and rename .env.example to .env
+
+Generate the APP_KEY for this .env file :   php artisan key:generate 
+
+Create a new DB 'project' in your database manager (xamp, etc...)
+
+Run the migrations using `php artisan migrate`.
+
+Serve the app on localhost:8000      php artisan serve // do not need to run tests
+
+Test : php artisan test --filter test_task_with_no_user  // a single test function
+
+Test : php artisan test // all tests
+
+Note: BE CAREFULL !! the use RefreshDatabase instruction in the Test class will empty the DB and run all migrations again before running each test.
+
+### Use Database SQLite (in memory or on disk)
+
+Add a connection in config/database.php
+
+```
+'sqlite' => [
+            'driver' => 'sqlite',
+            'database' => env('DB_DATABASE', database_path('database.sqlite')),
+            'prefix' => '',
+            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
+        ],
+```
+
+
+
 ## Test Laravel Eloquent Relationships
 
 There are PHPUnit tests in `tests/Feature/RelationshipsTest.php` file.
 
 ---
 
-## Task 1. HasMany Defined Incorrectly.
+## Task 1. HasMany Defined Incorrectly.  (answer on bottom)
 
 In `app/Models/User.php` file, the relationship is missing some parameter. Fix this.
 
@@ -82,7 +113,7 @@ Test method `test_filter_users()`.
 
 
 DB:
---
+---
 
 Copy the contents of your .env or .env.example file to create a file called .env.testing
 
@@ -142,3 +173,10 @@ with
 
 Then retry    php artisan migrate:fresh
 
+
+## Answer
+
+Task 1
+
+Add Task's foreign key 'users_id' in User model : $this->hasMany(Task::class, 'users_id');
+otherwise Eloquent will use it's default foreign key 'user_id' (without 's')
