@@ -6,13 +6,13 @@ Generate an APP_KEY in this .env file :   php artisan key:generate
 
 Create a new DB and name it 'project' in your database manager (xamp, etc...)
 
-Run the migrations using `php artisan migrate`.
+Run the migrations `php artisan migrate`.
 
-Serve the app on localhost:8000      php artisan serve // do not need to run tests
+Serve the app on localhost:8000 `php artisan serve` // not mandatory to run the tests
 
-Test : php artisan test --filter test_task_with_no_user  // a single test function
+Test : `php artisan test --filter test_task_with_no_user`  // a single test
 
-Test : php artisan test // all tests
+Test : `php artisan test` // all tests
 
 Note: BE CAREFULL !! the use RefreshDatabase instruction in the Test class will empty the DB and run all migrations again before running each test.
 
