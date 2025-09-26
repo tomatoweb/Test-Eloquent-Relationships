@@ -1,6 +1,6 @@
 # How to run Laravel tests :
 
-Copy and rename .env.example to .env
+Copy and rename `.env.example` to `.env` or `.env.local`
 
 Generate an APP_KEY in this .env file :   php artisan key:generate 
 
@@ -116,17 +116,13 @@ Test method `test_filter_users()`.
 
 ---
 
-
-DB:
+### You may need to serve your App for dev purposes and at the same time use SQLite for the tests
+### and safely keep your dev DB datas
 ---
 
-Copy the contents of your .env or .env.example file to create a file called .env.testing
+Create an .env.testing file, set `APP_ENV` to `testing` and remove all `DB_` entries
 
-Change the value of APP_ENV to 'testing'
-
-remove all of the DB_ entries
-
-Make sure your phpunit.xml has the following lines and uncomment them:
+Make sure your phpunit.xml has the following lines
 
 <env name="DB_CONNECTION" value="memory_testing"/>
 <env name="DB_DATABASE" value=":memory:"/>
