@@ -32,8 +32,9 @@ And connect it in phpunit.xml
 <env name="DB_CONNECTION" value="sqlite"/>
 <env name="DB_DATABASE" value=":memory:"/>
 ```
+
 ---
-## Test Laravel Eloquent Relationships
+# Test Laravel Eloquent Relationships
 
 There are PHPUnit tests in `tests/Feature/RelationshipsTest.php` file.
 
