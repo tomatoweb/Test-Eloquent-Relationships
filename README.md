@@ -2,9 +2,9 @@
 
 Copy and rename .env.example to .env
 
-Generate the APP_KEY for this .env file :   php artisan key:generate 
+Generate the APP_KEY in this .env file :   php artisan key:generate 
 
-Create a new DB 'project' in your database manager (xamp, etc...)
+Create a new DB and name it 'project' in your database manager (xamp, etc...)
 
 Run the migrations using `php artisan migrate`.
 
