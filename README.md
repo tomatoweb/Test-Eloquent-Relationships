@@ -14,11 +14,11 @@ Run a single Test  `php artisan test --filter test_task_with_no_user`
 
 Run all Tests `php artisan test`
 
-Note: BE CAREFULL !! the use RefreshDatabase instruction in the Test class will empty the DB and run all migrations again before running each test.
+Note: BE CAREFULL !! the `use RefreshDatabase` instruction in `tests/Feature/RelationshipsTest.php` will empty the DB and run all migrations again before running each test.
 
 ### Use Database SQLite (in memory or on disk)
 
-Add a connection in config/database.php
+Add a connection in `config/database.php`
 ```
 'sqlite' => [
             'driver' => 'sqlite',
@@ -27,7 +27,7 @@ Add a connection in config/database.php
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 ```
-And connect it in phpunit.xml
+And connect it in `phpunit.xml`
 ```
 <env name="DB_CONNECTION" value="sqlite"/>
 <env name="DB_DATABASE" value=":memory:"/>
