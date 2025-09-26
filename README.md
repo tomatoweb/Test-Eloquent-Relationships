@@ -117,7 +117,7 @@ Test method `test_filter_users()`.
 ---
 
 ### You may need to serve your App with a populated MYSQL database for dev purposes 
-### and at the same time use SQLite for the tests and keep your dev DB datas
+### and at the same time use SQLite for the PHPUnit tests
 ---
 
 Create an .env.testing file, set `APP_ENV` to `testing` and remove all `DB_` entries
