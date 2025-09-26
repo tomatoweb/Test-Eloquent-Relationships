@@ -19,7 +19,6 @@ Note: BE CAREFULL !! the use RefreshDatabase instruction in the Test class will 
 ### Use Database SQLite (in memory or on disk)
 
 Add a connection in config/database.php
-
 ```
 'sqlite' => [
             'driver' => 'sqlite',
@@ -28,8 +27,11 @@ Add a connection in config/database.php
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 ```
-
-
+And connect it in phpunit.xml
+```
+<env name="DB_CONNECTION" value="sqlite"/>
+<env name="DB_DATABASE" value=":memory:"/>
+```
 
 ## Test Laravel Eloquent Relationships
 
