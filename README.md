@@ -10,9 +10,9 @@ Run the migrations `php artisan migrate`.
 
 Serve the app on localhost:8000 `php artisan serve` // not mandatory to run the tests
 
-Test : `php artisan test --filter test_task_with_no_user`  // a single test
+Single Test  `php artisan test --filter test_task_with_no_user`
 
-Test : `php artisan test` // all tests
+All Test `php artisan test`
 
 Note: BE CAREFULL !! the use RefreshDatabase instruction in the Test class will empty the DB and run all migrations again before running each test.
 
