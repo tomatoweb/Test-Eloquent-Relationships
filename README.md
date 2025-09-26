@@ -126,7 +126,10 @@ Create an app key
 php artisan key:generate --env=testing
 ```
 
-Make sure your phpunit.xml has the following lines
+Make sure your phpunit.xml has the following line
+```
+<env name="APP_ENV" value="testing"/>
+```
 
 <env name="DB_CONNECTION" value="memory_testing"/>
 <env name="DB_DATABASE" value=":memory:"/>
