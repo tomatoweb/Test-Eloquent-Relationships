@@ -153,8 +153,8 @@ Your unit and feature tests should now be using the in-memory SQLite database,
 while your local should continue using the database configured in .env file.
 
 
-MySQL error key too long:
-------------------------
+Tips: MySQL error key too long:
+------------------------------
 
 Solution 1:
 
@@ -174,9 +174,9 @@ with
 Then retry    php artisan migrate:fresh
 
 
-## Answer
+## Answers to the quizz questions
 
-Task 1
+Task 1.
 
 Add Task's foreign key 'users_id' in User model : $this->hasMany(Task::class, 'users_id');
 otherwise Eloquent will use it's default foreign key 'user_id' (without 's')
