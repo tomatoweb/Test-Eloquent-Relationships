@@ -1,4 +1,4 @@
-## How to use :
+# How to run Laravel tests :
 
 Copy and rename .env.example to .env
 
