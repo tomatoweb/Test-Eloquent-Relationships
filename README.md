@@ -2,7 +2,7 @@
 
 Copy and rename .env.example to .env
 
-Generate the APP_KEY in this .env file :   php artisan key:generate 
+Generate an APP_KEY in this .env file :   php artisan key:generate 
 
 Create a new DB and name it 'project' in your database manager (xamp, etc...)
 
