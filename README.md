@@ -1,9 +1,10 @@
 # Laravel App including Eloquent Relationships and PHPUnit tests
 
-### How to run Laravel tests
+### Laravel testing documentation
 
 source : https://laravel.com/docs/12.x/testing
 
+### How to use this repository
 You do not need to (but you can) serve the app to run the tests, but you need a database to run this tests.
 For this tests you can use MySQL or SQLite.
 But if you use your existing populated database, be aware that the tests will empty your database and run all migrations again before running each test, because of using `use RefreshDatabase` in the test class.
