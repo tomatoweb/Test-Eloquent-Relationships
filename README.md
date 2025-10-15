@@ -53,7 +53,7 @@ Finally, run
 	php artisan optimize:clear
  to clear the caches if needed.
 
-## You may encounter MySQL error key too long
+### You may encounter MySQL error key too long
 
 Solution 1:
 
@@ -73,7 +73,7 @@ Then retry    php artisan migrate:fresh
 
 
 ---
-# Tests use cases explained and solved (with answers at the bottom of this page)
+## Tests use cases explained and solved (with answers at the bottom of this page)
 
 There are PHPUnit tests in `tests/Feature/RelationshipsTest.php` file.
 
@@ -153,67 +153,7 @@ Test method `test_filter_users()`.
 
 ---
 
-### You may need to serve your App with a populated MYSQL database for dev purposes 
-### and at the same time use SQLite for the PHPUnit tests
-
-Create an .env.testing file, set `APP_ENV` to `testing` and remove all `DB_` entries
-
-Create an app key
-```
-php artisan key:generate --env=testing
-```
-
-Make sure your phpunit.xml has the following line
-```
-<env name="APP_ENV" value="testing"/>
-```
-
-<env name="DB_CONNECTION" value="memory_testing"/>
-<env name="DB_DATABASE" value=":memory:"/>
-
-Add the following array to your connections in database.php:
-```
-'connections' => [
-
-   'memory_testing' => [
-     'driver' => 'sqlite',
-     'database' => ':memory:',
-     'prefix' => '',
-   ],
-```
-
-Finally, run 
-	php artisan optimize:clear
- to clear the caches.
-
-Your unit and feature tests should now be using the in-memory SQLite database, 
-while your local should continue using the database configured in .env file.
-
-
-Tips: MySQL error key too long:
-------------------------------
-
-Solution 1:
-
-In file appServiceProvider.php in function boot() ->   Schema::defaultStringLength(191);
-
-Solution 2:
-
-### If you use MySQL, in config/database.php, replace this line
-```   
-'connections' => [
-    ...
-    'mysql' => [
-        ...
-        'engine' => 'InnoDB ROW_FORMAT=DYNAMIC',
-    ]
-    ...
-``` 
-
-Then retry    php artisan migrate:fresh
-
-
-## Answers to the quizz questions
+# Use Cases solutions
 
 Task 1.
 
