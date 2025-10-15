@@ -1,6 +1,6 @@
 # Laravel App including Eloquent Relationships and PHPUnit tests
 
-# How to run Laravel tests
+### How to run Laravel tests
 
 source : https://laravel.com/docs/12.x/testing
 
