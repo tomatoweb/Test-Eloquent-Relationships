@@ -14,10 +14,10 @@ Therefore, you need to create an .env.testing, a separate connection in `config/
 The .env.testing will be used automatically when you run `php artisan test` or `vendor/bin/phpunit`.
 The .env or .env.local will be used when you serve the app with `php artisan serve`.
 
-### Use Database MySQL to serve the app
+### Use MySQL to serve the app
 1. Copy and rename `.env.example` to `.env` or `.env.local` (the one you do not commit to git)
 1b. configure APP_ENV=local
-2. Generate an APP_KEY in this .env file : `php artisan key:generate`
+2. Generate an APP_KEY in it : `php artisan key:generate`
 3. Create a new DB and name it 'project' in your database manager (phpmyadmin, wamp, etc...)
 4. Configure your MySQL connection with this DB name in this .env file 
 5. Run the migrations `php artisan migrate`.
@@ -25,8 +25,8 @@ The .env or .env.local will be used when you serve the app with `php artisan ser
 
 ### Use a testing env with SQLite to run the tests (in memory or on disk)
 1. Copy and rename `.env.example` to `.env.testing`
-2. configure APP_ENV=Testing
-3. remove all DB_ entries
+2. configure APP_ENV=Testing in it
+3. remove all DB_ entries from it
 4. Generate app key : `php artisan key:generate --env=testing`
 5. Add a connection in `config/database.php`
 ```
@@ -43,9 +43,9 @@ And connect it in `phpunit.xml`
 <env name="DB_DATABASE" value=":memory:"/>
 ```
 
-To Run a single Test : `php artisan test --filter test_task_with_no_user`
+To Run a single Test : `php artisan test --filter test_task_with_no_user` or `vendor/bin/phpunit --filter test_task_with_no_user`
 
-To Run all Tests at once : `php artisan test`
+To Run all Tests at once : `php artisan test` or `vendor/bin/phpunit`
 
 Remind, BE CAREFULL !! the `use RefreshDatabase` instruction in `tests/Feature/RelationshipsTest.php` will empty the DB and run all migrations again before running each test.
 
