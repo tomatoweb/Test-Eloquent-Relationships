@@ -162,14 +162,16 @@ In file appServiceProvider.php in function boot() ->   Schema::defaultStringLeng
 
 Solution 2:
 
-Inside config/database.php, replace this line for mysql
-
-'engine' => null',
-
-with
-
-'engine' => 'InnoDB ROW_FORMAT=DYNAMIC',
-
+### If you use MySQL, in config/database.php, replace this line
+```   
+'connections' => [
+    ...
+    'mysql' => [
+        ...
+        'engine' => 'InnoDB ROW_FORMAT=DYNAMIC',
+    ]
+    ...
+``` 
 
 Then retry    php artisan migrate:fresh
 
